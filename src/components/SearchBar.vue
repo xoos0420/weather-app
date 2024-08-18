@@ -2,10 +2,14 @@
   <div class="search-bar">
     <form @submit.prevent>
       <div class="form-group">
-        <input @input="inputText = $event.target.value" type="search" placeholder="지역을 입력해 주세요">
+        <input
+          @input="inputText = $event.target.value"
+          type="search"
+          placeholder="지역을 입력해 주세요"
+        >
         <button @click="
-          $store.commit('onSearchCity', inputText);
-        $store.dispatch('getWeather');
+          store.onSearchCity(inputText);
+          store.getWeather();
         ">
           <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
         </button>
@@ -15,11 +19,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { useStore } from '../store/store';
+import { storeToRefs } from 'pinia';
 
-const inputText = ref('');
+const store = useStore();
 
-const emits = defineEmits(['onSearchCity']);
 </script>
 
 <style lang="scss" scoped>

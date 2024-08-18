@@ -3,6 +3,7 @@
         <h2>About Weather App</h2>
         <p>Developer: xoos</p>
         <p>Last Update: 2024.08.18</p>
+        <p>App version: 1.1.0</p>
         <p>Email: xoos0420@gmail.com</p>
     </div>
 </template>
